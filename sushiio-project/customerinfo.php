@@ -22,7 +22,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-            <a class="nav-link active text-light" aria-current="page" href="index.php">Home</a>
+            <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
             <a class="nav-link text-light" href="order.php">Bestellen</a>
           </div>
          </div>
@@ -39,52 +39,44 @@
 
 
 
-    <!-- Order text section  -->
+      <!-- Customer INFO text section  -->
 
-        <div class="container">
+      <div class="container">
           <div class="row">
             <div class="col-md-12 mt-5">
-            <div class="card border-0 shadow">
-                 <div class="card-body">
-              <h2 class="fw-semibold">Bestelling</h2>
-              <p>
-                Maki komkommer: 2
-                </p>
-                    <b>Totaal: €5,00</b>
-                </div>
-            </div>
-        </div>  <!-- end col  -->
-        </div>  <!-- end row  -->
-        </div> <!-- end container  -->
-
-        
-         <!-- Customer INFO text section  -->
-
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 mt-5">
-            <div class="card border-0 shadow">
-                 <div class="card-body">
               <h2 class="fw-semibold">Klantgegevens</h2>
-              <p>
-                Dhiradj Tangali <br>
-                Teststraat1<br>
-                9299ZZ Test<br>
-                test@mail.com
-                </p>
-                </div>
-            </div>
+        
+                <form>
+                    <label for="firstname" class="form-label">Voornaam</label>
+                    <input type="name" class="form-control" id="name">
+
+                       <label for="lastname" class="form-label">Achternaam</label>
+                    <input type="name" class="form-control" id="name">
+
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email">
+
+                    <label for="text" class="form-label">Adres</label>
+                    <input type="text" class="form-control" id="text">
+                    
+                    <label for="text" class="form-label">Postcode</label>
+                    <input type="text" class="form-control" id="text">
+
+                    
+                    <label for="text" class="form-label">Woonplaats</label>
+                    <input type="text" class="form-control" id="text">
+                </form>
+
+                <button type="button" class="btn btn-dark mt-3">Ga naar sushi's</button>
+              
         </div>  <!-- end col  -->
         </div>  <!-- end row  -->
         </div> <!-- end container  -->
 
 
 
+       
 
-
-
-
-        <!-- Footer section  -->
 
         <div class="container-fluid bg-dark">
             <div class="row mt-5">
@@ -114,8 +106,8 @@
               </p>
             </div>
 
-            </div>  <!-- end row  -->
-        </div> <!-- end container  -->
+            </div>
+        </div> 
  
         
 

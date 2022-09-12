@@ -33,7 +33,7 @@
 
      <!-- Header section  -->
 
-      <div class="p-5 bg-image" class="img-fluid" style="background-image: url('./img/test2.png'); height: 310px;" ">
+      <div class="p-5 bg-image" class="img-fluid" style="background-image: url('./img/test2.png'); height: 310px;" >
       </div>
 
 
@@ -67,7 +67,7 @@
           <div class="card shadow border-0" style="">
           <img src="./img/testdel2.webp" class="card-img-top" alt="food delivery">
           <div class="card-body">
-          <p class="card-text">Bestel bij ons je sushi's.</p>
+          <a href="order.php" class="stretched-link text-black" style="text-decoration:none">Bestel bij ons je sushi's.</a>
         </div>
       </div>
     </div>
@@ -76,7 +76,7 @@
           <div class="card shadow border-0" style="">
           <img src="./img/sushi-3.jpg" class="card-img-top" alt="a bowl of sushi">
           <div class="card-body">
-          <p class="card-text">Keuze uit verschillende soorten sushi's.</p>
+          <a href="order.php" class="stretched-link text-black" style="text-decoration:none">Keuze uit verschillende soorten sushi's.</a>
         </div>
       </div>
           </div>
@@ -111,7 +111,6 @@
                 Zondag: 15:00-22:00<br>
               </p>
             </div>
-
 
             </div>
         </div> 
