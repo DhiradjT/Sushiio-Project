@@ -16,14 +16,14 @@
       <div class="col-lg-12">
         <nav class="navbar navbar-expand-lg bg-dark">
          <div class="container-fluid">
-           <a class="navbar-brand text-light" href="#">SUSHIIO</a>
+           <a class="navbar-brand text-light" href="index.php">SUSHIIO</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-            <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
-            <a class="nav-link text-light" href="order.php">Bestellen</a>
+            <a class="nav-link active text-light" aria-current="page" href="index.php">Home</a>
+            <a class="nav-link text-light" href="customerinfo.php">Bestellen</a>
           </div>
          </div>
         </div>
@@ -67,7 +67,7 @@
                     <input type="text" class="form-control" id="text">
                 </form>
 
-                <button type="button" class="btn btn-dark mt-3">Ga naar sushi's</button>
+                <a href="sushi.php"><button type="button" class="btn btn-dark mt-3">Ga naar sushi's</button></a>
               
         </div>  <!-- end col  -->
         </div>  <!-- end row  -->

@@ -16,14 +16,14 @@
       <div class="col-lg-12">
         <nav class="navbar navbar-expand-lg bg-dark">
          <div class="container-fluid">
-           <a class="navbar-brand text-light" href="#">SUSHIIO</a>
+           <a class="navbar-brand text-light" href="index.php">SUSHIIO</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-            <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
-            <a class="nav-link text-light" href="order.php">Bestellen</a>
+            <a class="nav-link active text-light" aria-current="page" href="index.php">Home</a>
+            <a class="nav-link text-light" href="customerinfo.php">Bestellen</a>
           </div>
          </div>
         </div>
@@ -36,26 +36,65 @@
       <div class="p-5 bg-image" class="img-fluid" style="background-image: url('./img/test2.png'); height: 310px;" >
       </div>
 
-
-
-
     <!-- Header text section  -->
 
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center">
-              <h2>Goedemiddag, welkom bij <b>Sushiio</b></h2>
+              <h2>
+              <!-- Get the right time and greet with switch case -->
+              <?php
+              $i= date("H");
+              switch ($i) {
+              case $i >= 6 &&  $i <= 12;
+                echo "Goedemorgen";
+                break;
+              case $i >= 12 && $i <= 18;
+                echo "Goedemiddag";
+                break;
+              case $i >= 18 && $i <= 24;
+                echo "Goedenavond";
+                break;
+              case $i >= 24 && $i <= 6;
+                echo "Goedenacht";
+                default:
+                }
+                ?>, welkom bij <b>Sushiio</b></h2>
               <p class="text-secondary">
                 Wij zijn gespecialiseerd in de Japanse keuken <br>
                 Het woord "sushi" is afkomstig van "su", wat azijn betekent en "shi" -- rijst.
                 </p>
               <p class="fw-bold text-muted">
                 Vandaag dinsdag 23 augustus 2022 <br>
-                Bezorgtijd vanaf nu: 18:00
+                Bezorgtijd vanaf nu:
+                <?php
+                $deliveryTime = strtotime('+1 hour');
+                $time = date('H:i', $deliveryTime);
+                echo $time
+                 ?>
               </p>
             </div>
         </div>  <!-- end row  -->
         </div> <!-- end container  -->
+
+
+<?php 
+
+
+
+
+// l = Geeft de dag aan 
+// j = Geeft datum aan
+// S = Geeft st of nd aan het einde van het getal
+// of = Van in het Nederlands
+// F = Maand
+// Y = Jaar
+echo date("l jS \of F Y");
+
+
+?>
+
+
 
 
         <!-- Cards section  -->
@@ -67,7 +106,7 @@
           <div class="card shadow border-0" style="">
           <img src="./img/testdel2.webp" class="card-img-top" alt="food delivery">
           <div class="card-body">
-          <a href="order.php" class="stretched-link text-black" style="text-decoration:none">Bestel bij ons je sushi's.</a>
+          <a href="customerinfo.php" class="stretched-link text-black" style="text-decoration:none">Bestel bij ons je sushi's.</a>
         </div>
       </div>
     </div>
@@ -76,7 +115,7 @@
           <div class="card shadow border-0" style="">
           <img src="./img/sushi-3.jpg" class="card-img-top" alt="a bowl of sushi">
           <div class="card-body">
-          <a href="order.php" class="stretched-link text-black" style="text-decoration:none">Keuze uit verschillende soorten sushi's.</a>
+          <a href="customerinfo.php" class="stretched-link text-black" style="text-decoration:none">Keuze uit verschillende soorten sushi's.</a>
         </div>
       </div>
           </div>
