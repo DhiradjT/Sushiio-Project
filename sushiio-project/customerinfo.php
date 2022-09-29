@@ -41,38 +41,67 @@
 
       <!-- Customer INFO text section  -->
 
-      <div class="container">
+        <div class="container">
           <div class="row">
             <div class="col-md-12 mt-5">
               <h2 class="fw-semibold">Klantgegevens</h2>
+
+     
         
-                <form>
+                <form method="post" action="order.php">
                     <label for="firstname" class="form-label">Voornaam</label>
-                    <input type="name" class="form-control" id="name">
+                    <input type="name" class="form-control" name="name">
 
                        <label for="lastname" class="form-label">Achternaam</label>
-                    <input type="name" class="form-control" id="name">
+                    <input type="name" class="form-control" name="lastName">
 
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email">
+                    <input type="email" class="form-control" name="email">
 
                     <label for="text" class="form-label">Adres</label>
-                    <input type="text" class="form-control" id="text">
+                    <input type="text" class="form-control" name="adress">
                     
                     <label for="text" class="form-label">Postcode</label>
-                    <input type="text" class="form-control" id="text">
+                    <input type="text" class="form-control" name="zip">
 
                     
                     <label for="text" class="form-label">Woonplaats</label>
-                    <input type="text" class="form-control" id="text">
-                </form>
+                    <input type="text" class="form-control" name="living">
+
+                    <input type="submit" name="verzenden" value="Ga naar sushi's">
+                </form> 
+
+
+                <!-- <form method="post" action="order.php">
+                    <label>Voornaam</label>
+                    <input type="name" name="name">
+
+                       <label>Achternaam</label>
+                    <input type="name" name="lastName">
+
+                    <label>Email</label>
+                    <input type="email" name="email">
+
+                    <label>Adres</label>
+                    <input type="text" name="adress">
+                    
+                    <label>Postcode</label>
+                    <input type="text" name="zip">
+
+                    
+                    <label>Woonplaats</label>
+                    <input type="text" name="living">
+
+                    <input type="submit" name="verzenden" value="Ga naar sushi's">
+                </form> -->
+
+
 
                 <a href="sushi.php"><button type="button" class="btn btn-dark mt-3">Ga naar sushi's</button></a>
               
         </div>  <!-- end col  -->
         </div>  <!-- end row  -->
         </div> <!-- end container  -->
-
 
 
        
