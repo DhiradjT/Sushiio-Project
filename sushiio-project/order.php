@@ -72,7 +72,7 @@
                   <?php 
       session_start();
 
-      echo $_SESSION['firstname'] . $_SESSION['lastname'] . "<br>" .  $_SESSION['email'] ."<br>".  $_SESSION['adress'] ."<br>" .  $_SESSION['zip'] ."<br>" .  $_SESSION['living']; 
+      echo $_SESSION['firstname'] . " " .   $_SESSION['lastname'] . "<br>" .  $_SESSION['email'] ."<br>".  $_SESSION['adress'] ."<br>" .  $_SESSION['zip'] ."<br>" .  $_SESSION['living']; 
 
     ?>
              

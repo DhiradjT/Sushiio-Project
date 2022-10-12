@@ -65,22 +65,30 @@
                 Het woord "sushi" is afkomstig van "su", wat azijn betekent en "shi" -- rijst.
                 </p>
               <p class="fw-bold text-muted">
-                Vandaag dinsdag 23 augustus 2022 <br>
-                Bezorgtijd vanaf nu:
-                <?php
-                $deliveryTime = strtotime('+1 hour');
-                $time = date('H:i', $deliveryTime);
-                echo $time
-                 ?>
-              </p>
-            </div>
-        </div>  <!-- end row  -->
-        </div> <!-- end container  -->
+              <?php 
 
-
-<?php 
-
-
+function dateForOrder()  {
+  $newTime = strtotime('+1 hour');
+  $dateOfToday = date('w', $newTime); 
+  $restOfTheDate = sprintf("%s of %s %s", date('dS', $newTime), date('F', $newTime), date('Y', $newTime));
+  $deliveryTime = date('H:i', $newTime);
+  $time = date('G');
+  if(($time < 15 || $time > 22 && $dateOfToday == 0 || $dateOfToday == 1)
+  ) {
+    echo 'Wij bezorgen momenteel niet of wij zijn gesloten';
+  } else {
+    switch ($dateOfToday) {
+      case 0: echo ""; break;
+      case 1: echo "Wij zijn op maandag gesloten"; break;
+      case 2: echo "Vandaag is het Dinsdag $restOfTheDate <br>Als je nu een bestelling plaatst, dan zal je bestelling arriveren op:  $deliveryTime"; break;
+      case 3: echo "Vandaag is het Woensdag $restOfTheDate <br>Als je nu een bestelling plaatst, dan zal je bestelling arriveren op:  $deliveryTime "; break;
+      case 4: echo "Vandaag is het Donderdag $restOfTheDate <br>Als je nu een bestelling plaatst, dan zal je bestelling arriveren op:  $deliveryTime "; break;
+      case 5: echo "Vandaag is het Vrijdag $restOfTheDate <br>Als je nu een bestelling plaatst, dan zal je bestelling arriveren op:  $deliveryTime "; break;   
+      default: echo "Vandaag is het Zaterdag $restOfTheDate <br>Als je nu een bestelling plaatst, dan zal je bestelling arriveren op:  $deliveryTime ";
+    };
+  }
+};
+dateForOrder();
 
 
 // l = Geeft de dag aan 
@@ -89,7 +97,50 @@
 // of = Van in het Nederlands
 // F = Maand
 // Y = Jaar
-echo date("l jS \of F Y");
+// echo date("l jS \of F Y");
+
+
+?>
+              </p>
+            </div>
+        </div>  <!-- end row  -->
+        </div> <!-- end container  -->
+
+
+
+        <?php 
+
+// function dateForOrder()  {
+//   $newTime = strtotime('+1 hour');
+//   $dateOfToday = date('w', $newTime); 
+//   $restOfTheDate = sprintf("%s of %s %s", date('dS', $newTime), date('F', $newTime), date('Y', $newTime));
+//   $deliveryTime = date('H:i', $newTime);
+//   $time = date('G');
+//   if(($time < 15 || $time > 22 && $dateOfToday == 0 || $dateOfToday == 1)
+//   ) {
+//     echo 'We aren\'t delivering right now or we are closed' ;
+//   } else {
+//     switch ($dateOfToday) {
+//       case 0: echo "We are closed on Sundays"; break;
+//       case 1: echo "We are closed on Mondays"; break;
+//       case 2: echo "Vandaag is het Dinsdag $restOfTheDate <br>Als je nu een bestelling plaatst, dan zal je bestelling arriveren op:  $deliveryTime "; break;
+//       case 3: echo "Vandaag is het Woensdag $restOfTheDate <br>Als je nu een bestelling plaatst, dan zal je bestelling arriveren op:  $deliveryTime "; break;
+//       case 4: echo "Vandaag is het Donderdag $restOfTheDate <br>Als je nu een bestelling plaatst, dan zal je bestelling arriveren op:  $deliveryTime "; break;
+//       case 5: echo "Vandaag is het Vrijdag $restOfTheDate <br>Als je nu een bestelling plaatst, dan zal je bestelling arriveren op:  $deliveryTime "; break;   
+//       default: echo "Vandaag is het Zaterdag $restOfTheDate <br>Als je nu een bestelling plaatst, dan zal je bestelling arriveren op:  $deliveryTime ";
+//     };
+//   }
+// };
+// dateForOrder();
+
+
+// l = Geeft de dag aan 
+// j = Geeft datum aan
+// S = Geeft st of nd aan het einde van het getal
+// of = Van in het Nederlands
+// F = Maand
+// Y = Jaar
+// echo date("l jS \of F Y");
 
 
 ?>
@@ -121,6 +172,35 @@ echo date("l jS \of F Y");
           </div>
           </div>  <!-- end row  -->
         </div> <!-- end container  -->
+
+
+        <div class="container">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="img/stock1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="img/stock2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+        </div>
+
+
+
+
 
 
         <div class="container-fluid bg-dark">
