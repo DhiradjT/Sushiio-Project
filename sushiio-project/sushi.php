@@ -157,8 +157,12 @@
                     <label for="floatingSelect">Aantal</label>
                 </div>
 
+                <input type="submit" name="verzenden" class="btn btn-dark mt-4" value="Verzenden">
 
-                <a href="order.php"><button type="button" class="btn btn-dark mt-4">Verzenden</button></a>
+
+        
+
+
 
 
         </div>  <!-- end col  -->

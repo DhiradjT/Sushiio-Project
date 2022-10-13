@@ -7,6 +7,7 @@
           <link rel="stylesheet" href="style.css">
           <title>Sushiio</title>
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
       </head>
       <body>
           
@@ -172,103 +173,61 @@
 
 
   <!-- <div class="section-testimonial"> -->
-  <div class="container-fluid testimonial shadow">
+  <div class="container testimonial">
     <div class="row mt-5">
-      <div class="col-lg-12 text-center">
-        <h2 class="services-h2">Wat onze klanten zeggen</h2>
-        <b class="text-secondary">Onze klanten sturen ons veel positieve feedback over onze diensten en daar zijn we dol op</b>
+      <div class="col-lg-12">
+        <p class="testimonial-p"><b>ONZE KLANTEN</b></p>
+        <h2 class="testimonial-h2">Testimonials</h2>
+        <p class="testimonial-text">Onze kernwaarden vormen de kern van alles wat we doen. <br> Ze zijn geïntegreerd in ons dagelijkse werkleven en helpen <br> ons te onthouden dat onze klanten altijd op de eerste plaats <br> komen, het laatste bedankje moet altijd van ons komen.</p>
+        Schrijf een review <a href="review.php"><i class="bi bi-plus-circle-fill"></i></a>
       </div>
-  
-      <div class="col-lg-12 mt-5">
 
-          <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="true">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-            </div>
-            <div class="carousel-inner">
-
-              <div class="carousel-item active">
-                <div class="card border-0 shadow" >
-                  <div class="card-body">
-                    <p class="card-text">"Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper."</p>
-                    <div class="testimonial-img">
-                      <img src="img/stockman1.jpg" class="rounded-circle" alt="Saul Goodman Ceo Founder">
-                    </div>
-                  </div>
-                </div>
-                <h3 class="name-testimonial-person">Saul Goodman</h3>
-                <h4 class="source-testimonial-person">Facebook</h4>
-              </div>
+      
+      <div class="col mt-5">
+      <div class="card shadow border-0">
+      <div class="testimonial-1">
+  <div class="card-body">
+  <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> 
+    <h5 class="card-title text-light  mt-5">Brandon Lee</h5>
+    <p class="card-text text-light">2 vrienden en ik zijn er afgelopen zaterdagavond (08-10-22) gaan eten. Reserveren is een must. Een heel klein restaurant in een geweldig hotel. Er waren waarschijnlijk 8 tafels in het gebied dat werd gebruikt. Ze nodigden ons uit om naar de bar te gaan voor een drankje als we dat wilden.</p>
+    <i>10-10-2022</i>
+  </div>
+</div>
+</div>
+      </div>
 
 
 
-              <div class="carousel-item">
-              <div class="card border-0 shadow" >
-              <div class="testimonial-img text-center"><img src="img/stockman1.jpg" class="rounded-circle" alt="Matt Brandon Freelancer ">
-                </div>
-                  <div class="card-body mt-5">
-                  <h3 class="name-testimonial-person text-center">Marts Ploon</h3>
-                  <h4 class="source-testimonial-person text-center">Facebook</h4>
-                  <p class="card-text">"Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore."</p>
-              </div>
-            </div>
-            </div>
+      <div class="col mt-5">
+      <div class="card shadow">
+      <div class="testimonial-2">
+  <div class="card-body">
+  <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-half"></i>
+    <h5 class="card-title text-light mt-5">Hans Schaek</h5>
+    <p class="card-text text-light">Zo’n heerlijk eten! Fraai opgediend op een mooi bord en met een vriendelijke lach geserveerd. Een gezellige sfeer. Je moet zeker een "foodie" zijn voor deze plek, geweldig gebruik van culinaire technieken. Een beetje te verfijnd voor ons, maar we hadden een geweldige tijd. We hebben enorm genoten. </p>
+    <i>03-10-2022</i>
+  </div>
+</div>
+</div>
+      </div>
 
+      
 
-              <div class="carousel-item">
-              <div class="card border-0 shadow" >
-              <div class="testimonial-img text-center"><img src="img/stockman1.jpg" class="rounded-circle" alt="Matt Brandon Freelancer ">
-                </div>
-                  <div class="card-body mt-5">
-                  <h3 class="name-testimonial-person text-center">Joost Siemons</h3>
-                  <h4 class="source-testimonial-person text-center">Facebook</h4>
-                  <p class="card-text">"Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore."</p>
-              </div>
-            </div>
-            </div>
+      <div class="col mt-5">
+        <div class="card shadow">
+        <div class="testimonial-3">
+  <div class="card-body">
+  <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i>
+    <h5 class="card-title text-light  mt-5">Mieke Dijk</h5>
+    <p class="card-text text-light">Heerlijk heerlijk heerlijk. De aandacht voor detail, de service, de keuze in het menu, de snelheid en de kwaliteitsprijs was fantastisch. Was zwanger toen we daar aten en de chef was uiterst meegaand om een paar van de gerechten te veranderen zodat ik ze kon eten. Zal zeker teruggaan!</p>
+    <i>05-10-2022</i>
+  </div>
+</div>
+</div>
+      </div>
+      
+      
 
-
-
-
-            <div class="carousel-item">
-              <div class="card border-0 shadow" >
-              <div class="testimonial-img text-center"><img src="img/stockman1.jpg" class="rounded-circle" alt="Matt Brandon Freelancer ">
-                </div>
-                  <div class="card-body mt-5">
-                  <h3 class="name-testimonial-person text-center">Brandon State</h3>
-                  <h4 class="source-testimonial-person text-center">Uber</h4>
-                  <p class="card-text">"Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore."</p>
-              </div>
-            </div>
-            </div>
-
-
-
-            <div class="carousel-item">
-              <div class="card border-0 shadow" >
-              <div class="testimonial-img text-center"><img src="img/stockman1.jpg" class="rounded-circle" alt="Matt Brandon Freelancer ">
-                </div>
-                  <div class="card-body mt-5">
-                  <h3 class="name-testimonial-person text-center">Tracy Noord</h3>
-                  <h4 class="source-testimonial-person text-center">Uber Eats</h4>
-                  <p class="card-text">"Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore."</p>
-              </div>
-            </div>
-            </div>
-
-
-          </div>
-        </div>
-
-        </div>
-
-      </div>  <!--ROW end div-->
-    </div> <!--CONTAINER end div-->
-    </div><!--End Testimonials section div-->
 
 
     </div>
@@ -280,31 +239,6 @@
 
 
 
-
-  <!-- 
-          <div class="container">
-          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="10000">
-        <img src="img/stock1.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="img/stock2.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div> 
-          </div> -->
 
 
 

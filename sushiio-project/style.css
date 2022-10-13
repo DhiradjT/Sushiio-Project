@@ -1,14 +1,15 @@
-.testimonial {
-    background-color: #eeeeee;
-    height: 900px;
+.testimonial-1 {
+    background-color: #8885EC;
 }
 
-.testimonial-img img  {
-    margin: -40px 0 0 40px;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    position: relative;
-    top: 60px;
-    right: 23px;
-    height: 164px;
-    width: 175px;
-  }
+.testimonial-2 {
+    background-color: #379BF4;
+}
+
+.testimonial-3 {
+    background-color: #58C9A5;
+}
+
+
+
+

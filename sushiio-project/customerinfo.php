@@ -68,38 +68,19 @@
                     <label for="text" class="form-label">Woonplaats</label>
                     <input type="text" class="form-control" name="living">
 
-                    <input type="submit" name="verzenden" value="Ga naar sushi's">
+                    <input type="submit" name="verzenden" class="btn btn-dark mt-3" value="Ga naar sushi's">
                 </form> 
 
                 <?php
 
                 session_start();
-
-
-              //   if(isset($_POST['verzenden'])) {
-              //     $check = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
-              //      if(empty($_POST['firstname']) . empty($_POST['lastname']) . empty($_POST['email']) . empty($_POST['adress']) .  empty($_POST['zip']) .  empty($_POST['living'])) {
-              //         echo "Niet alle velden ingevuld";
-              //     }  else if (!$check) {
-              //             echo "Vul een geldig email in";
-              //     } else if (!empty($_POST['firstname']) . !empty($_POST['lastname']) . !empty($_POST['email']) . !empty($_POST['adress']) .  !empty($_POST['zip']) .  !empty($_POST['living'])) {
-              //         $_SESSION['firstname'] = $_POST['firstname'];
-              //         $_SESSION['lastname'] = $_POST['lastname'];
-              //         $_SESSION['email'] = $_POST['email'];
-              //         $_SESSION['adress'] = $_POST['adress'];
-              //         $_SESSION['zip'] = $_POST['zip'];
-              //         $_SESSION['living'] = $_POST['living'];
-              //         header("Location: sushi.php");
-              //     }
-              // }
-
-
+                
               if(isset($_POST['verzenden'])) {
                 
                 $check = filter_input(INPUT_POST, "email" , FILTER_VALIDATE_EMAIL);
-                if(empty($_POST['firstname']) . empty($_POST['lastname']) . empty($_POST['email']) . empty($_POST['adress']) .  empty($_POST['zip']) .  empty($_POST['living'])) {
+                if(empty($_POST['firstname']) && empty($_POST['lastname']) && empty($_POST['email']) && empty($_POST['adress']) && empty($_POST['zip']) &&  empty($_POST['living'])) {
                   echo "Niet alle velden zijn ingevuld!";
-                } else if (!$check) {
+                } else if ($check === false) {
                   echo "Vul een geldig email in!";
                 }
                 
@@ -116,54 +97,7 @@
 
               }
 
-
-
-                  // if(isset($_POST['verzenden'])) {
-                  //   $check = filter_input(INPUT_POST, "email",FILTER_VALIDATE_EMAIL);
-                  //   if(empty($_POST['firstname']) ||  empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['adress']) || empty($_POST['zip']) || empty($_POST['living'])) {
-                  //     echo "Vul alle velden in!";
-                  //   } else if (!$check) {
-                  //       echo "Vul een geldig email in";
-                  //   } else if (!empty($_POST['firstname']) .  !empty($_POST['lastname']) .  !empty($_POST['email']) . !empty($_POST['adress']) . !empty($_POST['zip']) . !empty($_POST['living']))  {
-                  //     $_SESSION['firstname'] = $_POST['firstname'];
-                  //     $_SESSION['lastname'] = $_POST['lastname'];
-                  //     $_SESSION['email'] = $_POST['email'];
-                  //     $_SESSION['adress'] = $_POST['adress'];
-                  //     $_SESSION['zip'] = $_POST['zip'];
-                  //     $_SESSION['living'] = $_POST['living'];
-                  //     header("Location: sushi.php");
-                  //   }
-                  // }
-
                 ?>
-
-
-                <!-- <form method="post" action="order.php">
-                    <label>Voornaam</label>
-                    <input type="name" name="name">
-
-                       <label>Achternaam</label>
-                    <input type="name" name="lastName">
-
-                    <label>Email</label>
-                    <input type="email" name="email">
-
-                    <label>Adres</label>
-                    <input type="text" name="adress">
-                    
-                    <label>Postcode</label>
-                    <input type="text" name="zip">
-
-                    
-                    <label>Woonplaats</label>
-                    <input type="text" name="living">
-
-                    <input type="submit" name="verzenden" value="Ga naar sushi's">
-                </form> -->
-
-
-
-                <a href="sushi.php"><button type="button" class="btn btn-dark mt-3">Ga naar sushi's</button></a>
               
         </div>  <!-- end col  -->
         </div>  <!-- end row  -->
