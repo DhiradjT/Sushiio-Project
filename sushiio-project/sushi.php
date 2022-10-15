@@ -159,8 +159,34 @@
 
                 <input type="submit" name="verzenden" class="btn btn-dark mt-4" value="Verzenden">
 
+                <br>
+                <br>
+                <br>
 
-        
+                <?php
+
+                if(isset($_POST['verzenden'])) {
+                  if(!empty($_POST['form-floating'])) {
+                    header("Location: order.php");
+                  }
+                }
+      
+      try {
+        $db = new PDO("mysql:host=localhost; dbname=sushi", "root" , "");
+        $query = $db->prepare( "SELECT * FROM sushistock");
+        $query->execute();
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+        foreach($result as $data) {
+          echo $data['naam'] . " ";
+          echo "€ " .  $data['prijs'] . " ";
+          echo $data['hoeveelheid'] . "<br>";
+        }
+      } catch (PDOExeption $e) {
+        die ("Error Reden" . $e->getMessage());
+      }
+
+    ?>
+   
 
 
 
@@ -168,10 +194,6 @@
         </div>  <!-- end col  -->
         </div>  <!-- end row  -->
         </div> <!-- end container  -->
-
-
-
-       
 
 
         <div class="container-fluid bg-dark">

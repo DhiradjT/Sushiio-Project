@@ -56,7 +56,7 @@
                 case $i >= 18 && $i <= 24;
                   echo "Goedenavond";
                   break;
-                case $i >= 24 && $i <= 6;
+                case $i >= 24 && $i <= 6;ww
                   echo "Goedenacht";
                   default:
                   }
