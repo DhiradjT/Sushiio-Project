@@ -47,6 +47,11 @@
                 <div class="card border-0 shadow">
                     <div class="card-body">
                   <h2 class="fw-semibold">Bestelling</h2>
+                  <?php
+                    session_start();
+
+                    echo $_SESSION['makikomkommer'] . $_SESSION['makiavocado'] . $_SESSION['nigirizalm'] . $_SESSION['philadelphiaroll'] . $_SESSION['spicytunaroll'] . $_SESSION['californiaroll'];
+                  ?>
                   <p>
                     Maki komkommer: 2
                     </p>
@@ -74,6 +79,7 @@
 
       echo $_SESSION['firstname'] . " " .   $_SESSION['lastname'] . "<br>" .  $_SESSION['email'] ."<br>".  $_SESSION['adress'] ."<br>" .  $_SESSION['zip'] ."<br>" .  $_SESSION['living']; 
 
+ 
     ?>
              
                     </p>

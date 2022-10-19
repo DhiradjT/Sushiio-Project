@@ -50,13 +50,13 @@
         
                 <form method="post" action="">
                     <label class="form-label">Voornaam</label>
-                    <input type="name" class="form-control" name="firstname">
+                    <input type="text" class="form-control" name="firstname">
 
                        <label class="form-label">Achternaam</label>
-                    <input type="name" class="form-control" name="lastname">
+                    <input type="text" class="form-control" name="lastname">
 
                     <label class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email">
+                    <input type="text" class="form-control" name="email">
 
                     <label class="form-label">Adres</label>
                     <input type="text" class="form-control" name="adress">
@@ -94,28 +94,48 @@
   //         header("Location: sushi.php");
   //     }
   // }
-                
-              if(isset($_POST['verzenden'])) {
-                
-                $check = filter_input(INPUT_POST, "email" , FILTER_VALIDATE_EMAIL);
-                if(empty($_POST['firstname']) && empty($_POST['lastname']) || empty($_POST['email']) && empty($_POST['adress']) && empty($_POST['zip']) &&  empty($_POST['living'])) {
-                  echo "Niet alle velden zijn ingevuld!";
-                } else if (!$check) {
-                  echo "Vul een geldig email in!";
-                }
-                
-                else if (!empty($_POST['firstname']) . !empty($_POST['lastname']) . !empty($_POST['email']) . !empty($_POST['adress']) .  !empty($_POST['zip']) .  !empty($_POST['living'])) {
-                  $_SESSION['firstname'] = $_POST['firstname'];
-                          $_SESSION['lastname'] = $_POST['lastname'];
-                          $_SESSION['email'] = $_POST['email'];
-                          $_SESSION['adress'] = $_POST['adress'];
-                          $_SESSION['zip'] = $_POST['zip'];
-                          $_SESSION['living'] = $_POST['living'];
-                          header("Location: sushi.php");
-                }
+
+  if(isset($_POST['verzenden'])) {
+    $check = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+     if(empty($_POST['firstname']) . empty($_POST['lastname']) . empty($_POST['email']) . empty($_POST['adress']) .  empty($_POST['zip']) . empty($_POST['living'])) {
+        echo "Niet alle velden ingevuld";
+    }  else if (!$check) {
+            echo "Vul een geldig email in";
+    } else if (!empty($_POST['firstname']) . !empty($_POST['lastname']) . !empty($_POST['email']) . !empty($_POST['adress']) .  !empty($_POST['zip']) . !empty($_POST['living'])) {
+        echo "Niet alle velden ingevuld";
+        $_SESSION['firstname'] = $_POST['firstname'];
+        $_SESSION['lastname'] = $_POST['lastname'];
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['adress'] = $_POST['adress'];
+        $_SESSION['zip'] = $_POST['zip'];
+        $_SESSION['living'] = $_POST['living'];
+        header("Location: sushi.php");
+    }
+}
 
 
-              }
+                
+              // if(isset($_POST['verzenden'])) {
+                
+              //   $check = filter_input(INPUT_POST, "email" , FILTER_VALIDATE_EMAIL);
+              //   if(empty($_POST['firstname']) && empty($_POST['lastname']) || empty($_POST['email']) && empty($_POST['adress']) && empty($_POST['zip']) &&  empty($_POST['living'])) {
+              //     echo "Niet alle velden zijn ingevuld!";
+              //   } else if (!$check) {
+              //     echo "Vul een geldig email in!";
+              //   }
+                
+              //   else if (!empty($_POST['firstname']) . !empty($_POST['lastname']) . !empty($_POST['email']) . !empty($_POST['adress']) .  !empty($_POST['zip']) .  !empty($_POST['living'])) {
+              //     $_SESSION['firstname'] = $_POST['firstname'];
+              //             $_SESSION['lastname'] = $_POST['lastname'];
+              //             $_SESSION['email'] = $_POST['email'];
+              //             $_SESSION['adress'] = $_POST['adress'];
+              //             $_SESSION['zip'] = $_POST['zip'];
+              //             $_SESSION['living'] = $_POST['living'];
+              //             header("Location: sushi.php");
+              //   }
+
+
+              // }
 
 
                 // if(isset($_POST['verzenden'])) {  

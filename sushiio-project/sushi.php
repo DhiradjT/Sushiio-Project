@@ -50,7 +50,7 @@
               
 
               <div class="form-floating">
-                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <select name="makikomkommmer" class="form-select" id="floatingSelect" aria-label="Floating label select example">
                   <option selected>0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -66,7 +66,7 @@
               <p class="fw-semibold">Maki Avocado <i>(max = 10)</i></p>
 
               <div class="form-floating">
-                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <select name="makiavocado" class="form-select" id="floatingSelect" aria-label="Floating label select example">
                   <option selected>0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -88,7 +88,7 @@
               <p class="fw-semibold">Nigiri zalm <i>(max = 10)</i></p>
 
               <div class="form-floating">
-                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <select name="nigirizalm" class="form-select" id="floatingSelect" aria-label="Floating label select example">
                   <option selected>0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -110,7 +110,7 @@
               <p class="fw-semibold">Philadelphia Roll <i>(max = 5)</i></p>
 
               <div class="form-floating">
-                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <select name="philadelphiaroll" class="form-select" id="floatingSelect" aria-label="Floating label select example">
                   <option selected>0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -127,7 +127,7 @@
               <p class="fw-semibold">Spicy Tuna Roll <i>(max = 5)</i></p>
 
               <div class="form-floating">
-                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <select name="spicytunaroll" class="form-select" id="floatingSelect" aria-label="Floating label select example">
                   <option selected>0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -143,7 +143,7 @@
               <p class="fw-semibold">California Roll <i>(max = 8)</i></p> 
 
               <div class="form-floating">
-                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <select name="californiaroll" class="form-select" id="floatingSelect" aria-label="Floating label select example">
                   <option selected>0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -163,27 +163,39 @@
                 <br>
                 <br>
 
-                <?php
+      <?php
 
-                if(isset($_POST['verzenden'])) {
-                  if(!empty($_POST['form-floating'])) {
-                    header("Location: order.php");
-                  }
-                }
-      
-      try {
-        $db = new PDO("mysql:host=localhost; dbname=sushi", "root" , "");
-        $query = $db->prepare( "SELECT * FROM sushistock");
-        $query->execute();
-        $result = $query->fetchAll(PDO::FETCH_ASSOC);
-        foreach($result as $data) {
-          echo $data['naam'] . " ";
-          echo "€ " .  $data['prijs'] . " ";
-          echo $data['hoeveelheid'] . "<br>";
-        }
-      } catch (PDOExeption $e) {
-        die ("Error Reden" . $e->getMessage());
-      }
+session_start();
+
+          if(isset($_POST['verzenden'])) {
+            $_SESSION['makikomkommer'] = $_POST['makikomkommer'];
+            $_SESSION['makiavocado'] = $_POST['makiavocado'];
+            $_SESSION['nigirizalm'] = $_POST['nigirizalm'];
+            $_SESSION['philadelphiaroll'] = $_POST['philadelphiaroll'];
+            $_SESSION['spicytunaroll'] = $_POST['spicytunaroll'];
+            $_SESSION['californiaroll'] = $_POST['californiaroll'];
+            header("Location: order.php");
+          }
+
+
+       //Sushi's, voorraad, prijs uit database halen//
+      //   if(isset($_POST['verzenden'])) {
+      //       if(!empty($_POST['form-floating'])) {
+      //          header("Location: order.php");
+      //         }
+      //       } try {
+      //     $db = new PDO("mysql:host=localhost; dbname=sushi", "root" , "");
+      //     $query = $db->prepare( "SELECT * FROM sushistock");
+      //     $query->execute();
+      //     $result = $query->fetchAll(PDO::FETCH_ASSOC);
+      //     foreach($result as $data) {
+      //     echo $data['naam'] . " ";
+      //     echo "€ " .  $data['prijs'] . " ";
+      //     echo $data['hoeveelheid'] . "<br>";
+      //   }
+      // } catch (PDOExeption $e) {
+      //   die ("Error Reden" . $e->getMessage());
+      // }
 
     ?>
    
