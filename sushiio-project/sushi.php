@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -9,7 +10,39 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     </head>
     <body>
-        
+    <?php
+// Sushi's naar bestel pagina sturen
+    session_start();
+    if(isset($_POST['verzenden'])) {
+      $_SESSION['makikomkommer'] = $_POST['makikomkommer'];
+      $_SESSION['makiavocado'] = $_POST['makiavocado'];
+      $_SESSION['nigirizalm'] = $_POST['nigirizalm'];
+      $_SESSION['philadelphiaroll'] = $_POST['philadelphiaroll'];
+      $_SESSION['spicytunaroll'] = $_POST['spicytunaroll'];
+      $_SESSION['californiaroll'] = $_POST['californiaroll'];
+      header("Location: order.php");
+    }
+     
+    
+           //Sushi's, voorraad, prijs uit database halen//
+          //   if(isset($_POST['verzenden'])) {
+          //       if(!empty($_POST['form-floating'])) {
+          //          header("Location: order.php");
+          //         }
+          //       } try {
+          //     $db = new PDO("mysql:host=localhost; dbname=sushi", "root" , "");
+          //     $query = $db->prepare( "SELECT * FROM sushistock");
+          //     $query->execute();
+          //     $result = $query->fetchAll(PDO::FETCH_ASSOC);
+          //     foreach($result as $data) {
+          //     echo $data['naam'] . " ";
+          //     echo "€ " .  $data['prijs'] . " ";
+          //     echo $data['hoeveelheid'] . "<br>";
+          //   }
+          // } catch (PDOExeption $e) {
+          //   die ("Error Reden" . $e->getMessage());
+          // }
+?>
 
     <!-- Nav section  -->
 
@@ -45,6 +78,10 @@
           <div class="row">
             <div class="col-md-12 mt-3">
               <h2 class="fw-semibold">Sushi's bestellen</h2>
+
+              <form method="post" action="">
+                <label>Maki komkommmer</label>
+              </form>
 
               <p class="fw-semibold">Maki komkommer <i>(max = 5)</i></p>
               
@@ -163,41 +200,7 @@
                 <br>
                 <br>
 
-      <?php
-
-session_start();
-
-          if(isset($_POST['verzenden'])) {
-            $_SESSION['makikomkommer'] = $_POST['makikomkommer'];
-            $_SESSION['makiavocado'] = $_POST['makiavocado'];
-            $_SESSION['nigirizalm'] = $_POST['nigirizalm'];
-            $_SESSION['philadelphiaroll'] = $_POST['philadelphiaroll'];
-            $_SESSION['spicytunaroll'] = $_POST['spicytunaroll'];
-            $_SESSION['californiaroll'] = $_POST['californiaroll'];
-            header("Location: order.php");
-          }
-
-
-       //Sushi's, voorraad, prijs uit database halen//
-      //   if(isset($_POST['verzenden'])) {
-      //       if(!empty($_POST['form-floating'])) {
-      //          header("Location: order.php");
-      //         }
-      //       } try {
-      //     $db = new PDO("mysql:host=localhost; dbname=sushi", "root" , "");
-      //     $query = $db->prepare( "SELECT * FROM sushistock");
-      //     $query->execute();
-      //     $result = $query->fetchAll(PDO::FETCH_ASSOC);
-      //     foreach($result as $data) {
-      //     echo $data['naam'] . " ";
-      //     echo "€ " .  $data['prijs'] . " ";
-      //     echo $data['hoeveelheid'] . "<br>";
-      //   }
-      // } catch (PDOExeption $e) {
-      //   die ("Error Reden" . $e->getMessage());
-      // }
-
-    ?>
+      
    
 
 
