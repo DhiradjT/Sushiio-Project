@@ -38,7 +38,7 @@
 
 
 
-      <!-- Customer INFO text section  -->
+      <!-- Customer INFO text section  --> 
 
         <div class="container">
           <div class="row">
@@ -70,9 +70,168 @@
                     <input type="submit" name="verzenden" class="btn btn-dark mt-3" value="Ga naar sushi's">
                 </form> 
 
+     
+
+
+
+
+
+
                 <?php
 
-                session_start();
+                
+// Database connectie hieronder
+
+
+session_start();
+
+try {
+  $db = new PDO("mysql:host=localhost;dbname=sushistock","root","");
+
+  if(isset($_POST['verzenden'])) {
+
+    $check = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+     if(empty($_POST['firstname']) . empty($_POST['lastname']) . empty($_POST['email']) . empty($_POST['adress']) .  empty($_POST['zip']) . empty($_POST['living'])) {
+        echo "Niet alle velden ingevuld";
+    }  else if (!$check) {
+            echo "Vul een geldig email in";
+    } else if (!empty($_POST['firstname']) . !empty($_POST['lastname']) . !empty($_POST['email']) . !empty($_POST['adress']) .  !empty($_POST['zip']) . !empty($_POST['living'])) {
+
+      $firstName = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_STRING);
+      $lastName = filter_input(INPUT_POST, "lastname", FILTER_SANITIZE_STRING);
+      $mail = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+      $adress = filter_input(INPUT_POST, "adress", FILTER_SANITIZE_STRING);
+      $zip= filter_input(INPUT_POST, "zip", FILTER_SANITIZE_STRING);
+      $residence = filter_input(INPUT_POST, "living", FILTER_SANITIZE_STRING);
+      
+      
+
+      $query = $db->prepare("INSERT INTO client(name,lastname,mail,adress,zip,residence) VALUES(:name, :lastname, :mail, :adress, :zip, :residence)");
+      $query->bindParam("name", $firstName);
+      $query->bindParam("lastname", $lastName);
+      $query->bindParam("mail", $mail);
+      $query->bindParam("adress", $adress);
+      $query->bindParam("zip", $zip);
+      $query->bindParam("residence", $residence);
+
+      if($query->execute()) {
+      
+       
+        $_SESSION['firstname'] = $_POST['firstname'];
+        $_SESSION['lastname'] = $_POST['lastname'];
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['adress'] = $_POST['adress'];
+        $_SESSION['zip'] = $_POST['zip'];
+        $_SESSION['living'] = $_POST['living'];
+        header("Location: sushi.php");
+     }
+   }
+ }
+}     catch(PDOException $e) {
+      die("Error:" . $e->getMessage());
+    }
+    
+
+
+
+
+//       $firstName = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_STRING);
+//       $lastName = filter_input(INPUT_POST, "lastname", FILTER_SANITIZE_STRING);
+//       $mail = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+//       $adress = filter_input(INPUT_POST, "adress", FILTER_SANITIZE_STRING);
+//       $zip= filter_input(INPUT_POST, "zip", FILTER_SANITIZE_STRING);
+//       $residence = filter_input(INPUT_POST, "living", FILTER_SANITIZE_STRING);
+//       $query = $db->prepare("INSERT INTO client(name,lastname,mail,adress,zip,residence) VALUES(:name, :lastname, :mail, :adress, :zip, :residence)");
+//       $query->bindParam("name", $firstName);
+//       $query->bindParam("lastname", $lastName);
+//       $query->bindParam("mail", $mail);
+//       $query->bindParam("adress", $adress);
+//       $query->bindParam("zip", $zip);
+//       $query->bindParam("residence", $residence);
+//       if($query->execute()) {
+//         $check = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+//           echo "klantgegevens toegevoegd aan dbase";
+//       } else {
+//           echo "Geen klantgegevens toegevoegd";
+//       }
+//       echo "<br>";
+//   }
+// } catch(PDOException $e) {
+//   die("Error:" . $e->getMessage());
+// }
+
+//   if(isset($_POST['verzenden'])) {
+//     $check = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+//      if(empty($_POST['firstname']) . empty($_POST['lastname']) . empty($_POST['email']) . empty($_POST['adress']) .  empty($_POST['zip']) . empty($_POST['living'])) {
+//         echo "Niet alle velden ingevuld";
+//     }  else if (!$check) {
+//             echo "Vul een geldig email in";
+//     } else if (!empty($_POST['firstname']) . !empty($_POST['lastname']) . !empty($_POST['email']) . !empty($_POST['adress']) .  !empty($_POST['zip']) . !empty($_POST['living'])) {
+//         echo "Niet alle velden ingevuld";
+//         $_SESSION['firstname'] = $_POST['firstname'];
+//         $_SESSION['lastname'] = $_POST['lastname'];
+//         $_SESSION['email'] = $_POST['email'];
+//         $_SESSION['adress'] = $_POST['adress'];
+//         $_SESSION['zip'] = $_POST['zip'];
+//         $_SESSION['living'] = $_POST['living'];
+//         header("Location: sushi.php");
+//     }
+// }
+
+
+
+
+
+// try {
+//   $db = new PDO("mysql:host=localhost;dbname=sushistock","root","");
+
+//   if(isset($_POST['verzenden'])) {
+//       $firstName = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_STRING);
+//       $lastName = filter_input(INPUT_POST, "lastname", FILTER_SANITIZE_STRING);
+//       $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_STRING);
+//       $adress = filter_input(INPUT_POST, "adress", FILTER_SANITIZE_STRING);
+//       $zip = filter_input(INPUT_POST, "living", FILTER_SANITIZE_STRING);
+//       $residence = filter_input(INPUT_POST, "living", FILTER_SANITIZE_STRING);
+//       $query = $db->prepare("INSERT INTO client(name, lastname, mail, adress, zip, residence) VALUES(:naam)");
+//       $query->bindParam("firstname", $firstName);
+//       $query->bindParam("lastname", $lastName);
+//       $query->bindParam("mail", $mail);
+//       $query->bindParam("adress", $adress);
+//       $query->bindParam("zip", $zip);
+//       $query->bindParam("residence", $zip);
+//       if($query->execute()) {
+//       echo "<br>";
+//   }
+// } catch(PDOException $e) {
+//   die("DATABASE ERROR. ERROR CODE:" . $e->getMessage());
+// }
+
+// try {
+//   $db = new PDO("mysql:host=localhost;dbname=sushistock", "root","");
+//   if(isset($_POST['verzenden'])) {
+//     $check = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+//   }
+// }
+
+
+//   if(isset($_POST['verzenden'])) {
+//     $check = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+//      if(empty($_POST['firstname']) . empty($_POST['lastname']) . empty($_POST['email']) . empty($_POST['adress']) .  empty($_POST['zip']) . empty($_POST['living'])) {
+//         echo "Niet alle velden ingevuld";
+//     }  else if (!$check) {
+//             echo "Vul een geldig email in";
+//     } else if (!empty($_POST['firstname']) . !empty($_POST['lastname']) . !empty($_POST['email']) . !empty($_POST['adress']) .  !empty($_POST['zip']) . !empty($_POST['living'])) {
+//         echo "Niet alle velden ingevuld";
+//         $_SESSION['firstname'] = $_POST['firstname'];
+//         $_SESSION['lastname'] = $_POST['lastname'];
+//         $_SESSION['email'] = $_POST['email'];
+//         $_SESSION['adress'] = $_POST['adress'];
+//         $_SESSION['zip'] = $_POST['zip'];
+//         $_SESSION['living'] = $_POST['living'];
+//         header("Location: sushi.php");
+//     }
+// }
+
 
 
                 
@@ -94,23 +253,49 @@
   //     }
   // }
 
-  if(isset($_POST['verzenden'])) {
-    $check = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
-     if(empty($_POST['firstname']) . empty($_POST['lastname']) . empty($_POST['email']) . empty($_POST['adress']) .  empty($_POST['zip']) . empty($_POST['living'])) {
-        echo "Niet alle velden ingevuld";
-    }  else if (!$check) {
-            echo "Vul een geldig email in";
-    } else if (!empty($_POST['firstname']) . !empty($_POST['lastname']) . !empty($_POST['email']) . !empty($_POST['adress']) .  !empty($_POST['zip']) . !empty($_POST['living'])) {
-        echo "Niet alle velden ingevuld";
-        $_SESSION['firstname'] = $_POST['firstname'];
-        $_SESSION['lastname'] = $_POST['lastname'];
-        $_SESSION['email'] = $_POST['email'];
-        $_SESSION['adress'] = $_POST['adress'];
-        $_SESSION['zip'] = $_POST['zip'];
-        $_SESSION['living'] = $_POST['living'];
-        header("Location: sushi.php");
-    }
-}
+
+  // GOEDE VALIDATION HIERONDER : 
+
+//   if(isset($_POST['verzenden'])) {
+//     $check = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+//      if(empty($_POST['firstname']) . empty($_POST['lastname']) . empty($_POST['email']) . empty($_POST['adress']) .  empty($_POST['zip']) . empty($_POST['living'])) {
+//         echo "Niet alle velden ingevuld";
+//     }  else if (!$check) {
+//             echo "Vul een geldig email in";
+//     } else if (!empty($_POST['firstname']) . !empty($_POST['lastname']) . !empty($_POST['email']) . !empty($_POST['adress']) .  !empty($_POST['zip']) . !empty($_POST['living'])) {
+//         echo "Niet alle velden ingevuld";
+//         $_SESSION['firstname'] = $_POST['firstname'];
+//         $_SESSION['lastname'] = $_POST['lastname'];
+//         $_SESSION['email'] = $_POST['email'];
+//         $_SESSION['adress'] = $_POST['adress'];
+//         $_SESSION['zip'] = $_POST['zip'];
+//         $_SESSION['living'] = $_POST['living'];
+//         header("Location: sushi.php");
+//     }
+// }
+
+
+
+
+
+
+// try {
+//   $db = new PDO("mysql:host=localhost;dbname=telefoons","root","");
+
+//   if(isset($_POST['verzenden'])) {
+//       $merk = filter_input(INPUT_POST, "merk", FILTER_SANITIZE_STRING);
+//       $query = $db->prepare("INSERT INTO merk(naam) VALUES(:naam)");
+//       $query->bindParam("naam", $merk);
+//       if($query->execute()) {
+//           echo "Merk toegevoegd";
+//       } else {
+//           echo "Geen merk toegevoegd";
+//       }
+//       echo "<br>";
+//   }
+// } catch(PDOException $e) {
+//   die("Error:" . $e->getMessage());
+// }
 
 
                 
