@@ -50,11 +50,10 @@
                   <?php
                     session_start();
 
-                    echo $_SESSION['makikomkommer'] . $_SESSION['makiavocado'] . $_SESSION['nigirizalm'] . $_SESSION['philadelphiaroll'] . $_SESSION['spicytunaroll'] . $_SESSION['californiaroll'];
+                    echo "Makikomkommmer" . $_SESSION['makikomkommer'] . "<br>" . "Makiavocado" . " " . $_SESSION['makiavocado'] . "<br>" . "Nigirizalm" . " " .   $_SESSION['nigirizalm'] . "<br>" . " " . "Philadelphiaroll" . " " .   $_SESSION['philadelphiaroll'] . "<br>" . "Spicytunaroll" . " " .   $_SESSION['spicytunaroll'] . "<br>" . "Californiaroll" . " " .  $_SESSION['californiaroll'];
                   ?>
-                  <p>
-                    Maki komkommer: 2
-                    </p>
+                  <br>
+                  <br>
                         <b>Totaal: €5,00</b>
                     </div>
                 </div>

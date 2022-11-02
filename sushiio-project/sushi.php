@@ -80,8 +80,7 @@
               <h2 class="fw-semibold">Sushi's bestellen</h2>
 
               <form method="post" action="">
-                <label>Maki komkommmer</label>
-              </form>
+          
 
               <p class="fw-semibold">Maki komkommer <i>(max = 5)</i></p>
               
@@ -195,6 +194,7 @@
                 </div>
 
                 <input type="submit" name="verzenden" class="btn btn-dark mt-4" value="Verzenden">
+                </form>
 
                 <br>
                 <br>
