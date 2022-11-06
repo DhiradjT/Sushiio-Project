@@ -87,6 +87,7 @@
         echo "€" .  $data["price"] . " ";
         echo $data["stock"] . " " . "<br>";
     }
+
   }   catch(PDOException $e) {
     die("DATABASE ERROR! ERROR CODE:" . $e->getMessage());
   }
@@ -97,7 +98,10 @@
               <div class="col-md-12 mt-3">
                 <h2 class="fw-semibold">Sushi's bestellen</h2>
 
+                
                 <form method="post" action="">
+
+       
             
 
                 <p class="fw-semibold">Maki komkommer <i>(max = 5)</i></p>
